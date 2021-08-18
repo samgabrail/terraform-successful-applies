@@ -11,6 +11,7 @@ docker run --rm -e URL=https://app.terraform.io -e TOKEN=<TFC/TFE_TOKEN> -e MONT
 ## Output
 
 Output will look like this:
+```sh
 [{'successfulAppliesCount': 4,
   'workspaceID': 'ws-RBPYi1Cnipqonh9s',
   'workspaceName': 'hashicat-azure'},
@@ -32,3 +33,4 @@ Output will look like this:
   'workspaceName': 'web-blog-vault'}]
 {'Period': 'Last 12 month(s)',
  'Totals': {'Total Workspaces': 25, 'successfulAppliesCountTotal': 141}}
+ ```
