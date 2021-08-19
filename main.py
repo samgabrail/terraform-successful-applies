@@ -21,6 +21,7 @@ print(f'[INFO] Program started running at {startProgram}')
 URL = os.environ['URL']
 TOKEN = os.environ['TOKEN']
 MONTHS = int(os.environ['MONTHS'])
+ORGANIZATION = os.environ['ORGANIZATION']
 
 
 def getStartDate(months):
@@ -32,7 +33,7 @@ client = TFCClient(
     url=URL, token=TOKEN)
 
 # Retreive any object type by ID from the client
-my_org = client.get("organization", id="HashiCorp-Sam")
+my_org = client.get("organization", id=ORGANIZATION)
 
 
 def loopRuns(months, ws):

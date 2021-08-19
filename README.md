@@ -5,7 +5,8 @@ This is a python script to give the successful applies for all workspaces within
 Please note that the `MONTHS` env variable will give you the lookback. Example: `-e MONTHS=12` will provide the successful applies for the past 12 months starting from now.
 
 ```sh
-docker run --rm -e URL=https://app.terraform.io -e TOKEN=<TFC/TFE_TOKEN> -e MONTHS=12 -it samgabrail/terraform-successful-applies:latest
+export TOKEN=your_TFC_or_TFE_token
+docker run --rm -e URL=https://app.terraform.io -e TOKEN=$TOKEN -e ORGANIZATION=HashiCorp-Sam -e MONTHS=12 -it samgabrail/terraform-successful-applies:latest
 ```
 
 ## Output
