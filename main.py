@@ -37,8 +37,6 @@ my_org = client.get("organization", id=ORGANIZATION)
 
 
 def loopRuns(months, ws):
-    print(
-        f'[INFO] Getting successful applies for workspace {ws.name} for the last {months} month(s)')
     successfulAppliesCount = 0
     # To retreive all runs of a workspace:
     for run in ws.runs:
@@ -50,17 +48,22 @@ def loopRuns(months, ws):
 def loopWorkspaces(months):
     allWorkspaces = []
     successfulAppliesCountTotal = 0
+    counter = 0
     # To retreive all workspaces:
     for ws in my_org.workspaces:
+        counter += 1
         successfulAppliesCount = loopRuns(months, ws)
+        print(
+        f'[INFO] {successfulAppliesCount} successful applies for workspace {ws.name} for the last {months} month(s) | {counter} out of {len(list(my_org.workspaces))} workspaces completed')
         successfulAppliesCountTotal += successfulAppliesCount
         allWorkspaces.append({'workspaceID': ws.id, 'workspaceName': ws.name,
                               'successfulAppliesCount': successfulAppliesCount
                               })
     return allWorkspaces, successfulAppliesCountTotal
 
-
 allWorkspaces, successfulAppliesCountTotal = loopWorkspaces(MONTHS)
+
+print('[INFO] SUMMARY:')
 pprint(allWorkspaces)
 pprint({'Totals': {'Total Workspaces': len(allWorkspaces),
                    'successfulAppliesCountTotal': successfulAppliesCountTotal}, 'Period': f"Last {MONTHS} month(s)"})

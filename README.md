@@ -13,6 +13,18 @@ docker run --rm -e URL=https://app.terraform.io -e TOKEN=$TOKEN -e ORGANIZATION=
 
 Output will look like this:
 ```sh
+################
+[INFO] Program started running at 2021-08-27 13:17:12.004982
+[INFO] 0 successful applies for workspace hashicat-azure for the last 3 month(s) | 1 out of 25 workspaces completed
+[INFO] 0 successful applies for workspace terraform-google-nomad for the last 3 month(s) | 2 out of 25 workspaces completed
+[INFO] 0 successful applies for workspace infrastructure-gcp-tf-vault-deployment for the last 3 month(s) | 3 out of 25 workspaces completed
+[INFO] 0 successful applies for workspace infrastructure-gcp-tf-vault-configuration for the last 3 month(s) | 4 out of 25 workspaces completed
+[INFO] 4 successful applies for workspace vault-enterprise-deploy for the last 3 month(s) | 5 out of 25 workspaces completed
+[INFO] 2 successful applies for workspace hashicat-azure-workshop for the last 3 month(s) | 6 out of 25 workspaces completed
+[INFO] 6 successful applies for workspace azure-backend-test-sbx for the last 3 month(s) | 7 out of 25 workspaces completed
+[INFO] 4 successful applies for workspace azure-backend-test-dev for the last 3 month(s) | 8 out of 25 workspaces completed
+...truncated
+[INFO] SUMMARY:
 [{'successfulAppliesCount': 4,
   'workspaceID': 'ws-RBPYi1Cnipqonh9s',
   'workspaceName': 'hashicat-azure'},
@@ -34,4 +46,6 @@ Output will look like this:
   'workspaceName': 'web-blog-vault'}]
 {'Period': 'Last 12 month(s)',
  'Totals': {'Total Workspaces': 25, 'successfulAppliesCountTotal': 141}}
+[INFO] Program completed running at 2021-08-27 13:19:16.383164
+[INFO] Program took 0:02:04.378182 time to run
  ```
